@@ -1,0 +1,13 @@
+#component_load_user {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#component_load_user > span {
+    flex: 1 1 auto;
+    height: 100px;
+    display: inline-block;
+    border: 3px solid lightskyblue;
+    border-radius: 3px;
+}

@@ -1,0 +1,36 @@
+@import './src/component_input_handle/input_handle.scss';
+@import './src/component_submit_handle/submit_handle.scss';
+@import './src/component_load_user/load_user.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+}
+
+body {
+    background: gainsboro;
+}
+
+#instagram_handle {
+    width: 450px;
+    margin: 20px auto;
+    padding: 50px 0;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    background: lightgreen;
+    border-radius: 3px;
+}
+
+#user_data {
+    width: 450px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: lightcyan;
+    border-radius: 3px;
+}
