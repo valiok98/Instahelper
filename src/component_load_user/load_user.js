@@ -1,7 +1,7 @@
 import { LoadUserObservers } from './load_user_observers';
 import { LoadUserController } from './load_user_controller';
-import { from, of, zip } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { from, of } from 'rxjs';
+import { map, mergeMap } from 'rxjs/operators';
 
 export class LoadUser {
     constructor(store) {
@@ -40,8 +40,10 @@ export class LoadUser {
                             userNameDom.textContent = userName;
                             userIdDom.textContent = userId;
 
-                            return { valid: true, userName, userId, userFollowers: [], userFollowing: [] };
-                        })
+                            return { valid: true, userName, userId };
+                        }),
+                        mergeMap(res => this.controller.get_user_followers({valid: res.valid, userId: res.userId})),
+                        mergeMap(res => console.log(res))
                     )
                     .subscribe(this.observers.save_observer);
             }
