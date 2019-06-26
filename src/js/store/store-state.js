@@ -14,7 +14,8 @@ export const StoreState = {
         userName: '',
         userId: '',
         userFollowers: [],
-        userFollowing: []
+        userFollowing: [],
+        userHashtags: []
     }
 
 }

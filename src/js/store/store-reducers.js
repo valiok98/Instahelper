@@ -41,6 +41,7 @@ export class StoreReducers {
                         new_state.component_load_user.userId = payload.userId;
                         new_state.component_load_user.userFollowers = payload.userFollowers;
                         new_state.component_load_user.userFollowing = payload.userFollowing;
+                        new_state.component_load_user.userHashtags = payload.userHashtags;
                 }
                 return new_state;
             }

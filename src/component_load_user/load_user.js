@@ -29,21 +29,24 @@ export class LoadUser {
                 // Set the loading property back to false.
                 of({ valid: true }).subscribe(this.observers.reset_observer);
 
-                
-
                 from(this.controller.get_user_id(payload))
                     .pipe(
                         map(res => {
-                            const userName = res.graphql.user.username,
-                                userId = res.graphql.user.id;
+                            const userName = res.userIdData.graphql.user.username,
+                                userId = res.userIdData.graphql.user.id;
 
                             userNameDom.textContent = userName;
                             userIdDom.textContent = userId;
 
                             return { valid: true, userName, userId };
                         }),
-                        mergeMap(res => this.controller.get_user_followers({valid: res.valid, userId: res.userId})),
-                        mergeMap(res => console.log(res))
+                        mergeMap(res => this.controller.get_user_followers(res)),
+                        mergeMap(res => this.controller.get_user_following(res)),
+                        mergeMap(res => this.controller.get_user_hashtags(res)),
+                        map(res => {
+                            console.log(res);
+                            return res;
+                        })
                     )
                     .subscribe(this.observers.save_observer);
             }

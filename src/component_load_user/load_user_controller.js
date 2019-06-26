@@ -3,7 +3,7 @@ export const LoadUserController = {
         if (payload.valid === true) {
             return fetch(`/js/api/get_user_id/${payload.inputHandle}`)
                 .then(res => res.json())
-                .then(res => Promise.resolve({ ...res, userName: inputHandle, valid: true }));
+                .then(res => Promise.resolve({ userIdData: res, ...payload }));
         }
         return Promise.resolve({ valid: false });
     },
@@ -12,10 +12,7 @@ export const LoadUserController = {
         if (payload.valid === true) {
             return fetch(`/js/api/get_followers/${payload.userId}`)
                 .then(res => res.json())
-                .then(res => Promise.resolve({
-                    ...res, userName: payload.userName, userId: payload.userId,
-                    valid: true
-                }));
+                .then(res => Promise.resolve({ userFollowers: res, ...payload }));
         }
         return Promise.resolve({ valid: false });
     },
@@ -24,11 +21,7 @@ export const LoadUserController = {
         if (payload.valid === true) {
             return fetch(`/js/api/get_following/${payload.userId}`)
                 .then(res => res.json())
-                .then(res => Promise.resolve({
-                    ...res,
-                    userName: payload.userName, userId: payload.userId,
-                    valid: true
-                }));
+                .then(res => Promise.resolve({ userFollowing: res, ...payload }));
         }
         return Promise.resolve({ valid: false });
     },
@@ -37,11 +30,7 @@ export const LoadUserController = {
         if (payload.valid === true) {
             return fetch(`/js/api/get_hashtags/${payload.userId}`)
                 .then(res => res.json())
-                .then(res => Promise.resolve({
-                    ...res,
-                    userName: payload.userName, userId: payload.userId,
-                    valid: true
-                }));
+                .then(res => Promise.resolve({ userHashtags: res, ...payload }));
         }
         return Promise.resolve({ valid: false });
     }

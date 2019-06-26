@@ -21,20 +21,20 @@ app.get('/js/api/get_user_id/:inputHandle', (req, res) => {
         .catch(err => console.error(err));
 });
 
-app.get('/js/api/get_followers', (req, res) => {
-    service.get_followers()
+app.get('/js/api/get_followers/:userId', (req, res) => {
+    service.get_followers(req.params.userId)
         .then(response => res.send(response))
         .catch(err => console.error(err));
 });
 
-app.get('/js/api/get_following', (req, res) => {
-    service.get_following()
+app.get('/js/api/get_following/:userId', (req, res) => {
+    service.get_following(req.params.userId)
         .then(response => res.send(response))
         .catch(err => console.error(err));
 });
 
-app.get('/js/api/get_hashtags', (req, res) => {
-    service.get_hashtags()
+app.get('/js/api/get_hashtags/:userId', (req, res) => {
+    service.get_hashtags(req.params.userId)
         .then(response => res.send(response))
         .catch(err => console.error(err));
 });
