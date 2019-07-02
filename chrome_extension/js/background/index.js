@@ -1,11 +1,14 @@
 chrome.runtime.onInstalled.addListener(() => {
     chrome.browserAction.onClicked.addListener(function (tab) {
-        chrome.browserAction.setTitle({ title: 'Tame Impala' }, () => {
-            chrome.storage.local.set({ count: 123 });
+
+        chrome.tabs.create({
+            url: 'https://www.instagram.com/venturemashup/'
         });
 
-        window.open('https://www.instagram.com/');
-        window.open('./html/index.html');
+        chrome.tabs.create({
+            url: './html/index.html'
+        });
+
     });
 
 });
