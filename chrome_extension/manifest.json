@@ -4,10 +4,9 @@
         "version": "1.0",
         "description": "Dummy API of Instagram",
         "permissions": [
-            "activeTab",
             "tabs",
-            "declarativeContent",
-            "storage"
+            "http://*/",
+            "https://*/"
         ],
         "background": {
             "scripts": [
