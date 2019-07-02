@@ -1,13 +1,13 @@
-const h1 = document.querySelector('h1'),
-    button = document.querySelector('button');
-
 const InstagramRegex = RegExp(`www\.instagram\.com`);
-
+// Do not create new Instagram tab, if the user opens index manually.
 chrome.windows.getCurrent({ populate: true }, win => {
     // Check against the index.html from our chrome extension.
     for (const tab of win.tabs) {
         // Leave if we already have an Instragram instance.
         if (InstagramRegex.test(tab.url)) {
+            // chrome.tabs.executeScript(tab.id, {
+            //     file: './js/injectables/get-followers.js'
+            // });
             return;
         }
     }
@@ -20,8 +20,7 @@ chrome.windows.getCurrent({ populate: true }, win => {
         });
     });
 });
-
-// Handle closing of tabs.
+// Handle closing of Instagram tabs.
 chrome.tabs.onRemoved.addListener((tabId, moveInfo) => {
     chrome.tabs.query({
         url: [
@@ -38,25 +37,26 @@ chrome.tabs.onRemoved.addListener((tabId, moveInfo) => {
                     chrome.tabs.remove(indexTab.id);
                 }
             });
+        } else {
+            // chrome.tabs.executeScript(instaTabs[0].id, {
+            //     file: './js/injectables/get-followers.js'
+            // });
         }
     });
 });
 
-chrome.tabs.onMoved.addListener((tabId, moveInfo) => {
-    chrome.tabs.query({
-        url: [
-            'https://www.instagram.com/',
-            'https://www.instagram.com/*/'
-        ]
-    }, tabs => {
-        if (tabs.length !== 0) {
-
-            h1.textContent = 'HEllo';
-
-            chrome.tabs.executeScript(tabs[0].id, {
-                file: '../injectables/get-followers.js'
-            });
-
-        }
-    });
-});
+// // Handle movement of Instagram tabs.
+// chrome.tabs.onMoved.addListener((tabId, moveInfo) => {
+//     chrome.tabs.query({
+//         url: [
+//             'https://www.instagram.com/',
+//             'https://www.instagram.com/*/'
+//         ]
+//     }, tabs => {
+//         if (tabs.length !== 0) {
+//             chrome.tabs.executeScript(tabs[0].id, {
+//                 file: './js/injectables/get-followers.js'
+//             });
+//         }
+//     });
+// });
