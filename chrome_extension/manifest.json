@@ -5,6 +5,7 @@
         "description": "Dummy API of Instagram",
         "permissions": [
             "tabs",
+            "cookies",
             "http://*/",
             "https://*/"
         ],

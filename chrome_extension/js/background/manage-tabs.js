@@ -1,15 +1,17 @@
+import { MainFunction } from './main.js';
+
 const InstagramRegex = RegExp(`www\.instagram\.com`);
-let IndexTabId,
-    InstagramTabId;
+let instagramTabId;
+
 // Do not create new Instagram tab, if the user opens index manually.
 chrome.windows.getCurrent({ populate: true }, win => {
     // Check against the index.html from our chrome extension.
-    for (const tab of win.tabs) {
+    for (const winTab of win.tabs) {
         // Leave if we already have an Instragram instance.
-        if (InstagramRegex.test(tab.url)) {
-            InstagramTabId = tab.id;
-            chrome.tabs.executeScript(InstagramTabId, {
-                file: './js/injectables/get-followers.js'
+        if (InstagramRegex.test(winTab.url)) {
+            instagramTabId = winTab.id;
+            chrome.tabs.executeScript(instagramTabId, {
+                file: './js/content/get-followers.js'
             });
             return;
         }
@@ -18,9 +20,11 @@ chrome.windows.getCurrent({ populate: true }, win => {
     chrome.tabs.create({
         url: 'https://www.instagram.com/'
     }, tab => {
-        InstagramTabId = tab.id;
-        chrome.tabs.executeScript(InstagramTabId, {
-            file: './js/injectables/get-followers.js'
+        instagramTabId = tab.id;
+        chrome.tabs.executeScript(instagramTabId, {
+            file: './js/content/get-followers.js'
+        }, results => {
+            console.log(results);
         });
     });
 });
@@ -41,15 +45,14 @@ chrome.tabs.onRemoved.addListener((tabId, moveInfo) => {
                     chrome.tabs.remove(indexTab.id);
                 }
             });
-        } else if (tabId === InstagramTabId) {
+        } else if (tabId === instagramTabId) {
             // The user closed the communicating Instagram instance.
-            // Change the InstagramTabId to another running instance.
-            InstagramTabId = instaTabs[0].id;
+            // Change the instagramTabId to another running instance.
+            instagramTabId = instaTabs[0].id;
         }
     });
 });
-
 // Handle movement of Instagram tabs.
 chrome.tabs.onMoved.addListener((tabId, moveInfo) => {
-    console.log(InstagramTabId);
+    console.log(instagramTabId);
 });
