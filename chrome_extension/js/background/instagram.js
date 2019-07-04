@@ -41,10 +41,6 @@ export class Instagram {
             default:
                 chrome.tabs.executeScript(this.tab.id, {
                     file: './js/content/navigate-profile.js'
-                }, _ => {
-                    chrome.tabs.executeScript(this.tab.id, {
-                        file: './js/content/get-user-info.js'
-                    });
                 });
                 break;
         }

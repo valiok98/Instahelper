@@ -14,3 +14,6 @@
     const profileLink = document.querySelectorAll('.XrOey>a')[2];
     profileLink.click();
 })();
+
+import * as getUserInfo from './get-user-info';
+import * as postUserInfo from './post-user-actions';
