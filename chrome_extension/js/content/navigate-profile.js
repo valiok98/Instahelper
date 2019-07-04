@@ -16,4 +16,3 @@
 })();
 
 import * as getUserInfo from './get-user-info';
-import * as postUserInfo from './post-user-actions';

@@ -40,7 +40,7 @@ export class Instagram {
                 break;
             default:
                 chrome.tabs.executeScript(this.tab.id, {
-                    file: './js/content/navigate-profile.js'
+                    file: './dist/navigate-profile.min.js'
                 });
                 break;
         }
