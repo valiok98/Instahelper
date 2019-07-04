@@ -14,18 +14,3 @@
     const profileLink = document.querySelectorAll('.XrOey>a')[2];
     profileLink.click();
 })();
-
-window.addEventListener('load', e => {
-
-    const postLi = document.querySelectorAll('.Y8-fY')[0],
-        followersLi = document.querySelectorAll('.Y8-fY')[1],
-        followingLi = document.querySelectorAll('.Y8-fY')[2];
-
-    console.log(postLi, followersLi, followingLi);
-
-    const numberPosts = parseInt(
-        postLi.querySelector('span:first-of-type').textContent);
-
-    console.log(numberPosts);
-});
-
