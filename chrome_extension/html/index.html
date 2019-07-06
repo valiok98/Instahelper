@@ -11,24 +11,55 @@
 <body>
     <main>
         <div class="user-information">
-            <div>
-                <img src="../images/default_profile.jpg" alt="">
+            <img src="../images/default_profile.jpg" alt="">
+            <div class="user-data-count">
+                <div class="data-count-item">
+                    <span class='posts'>posts</span>
+                    <div class="mdc-linear-progress mdc-linear-progress--indeterminate">
+                        <div class="mdc-linear-progress__buffering-dots"></div>
+                        <div class="mdc-linear-progress__buffer"></div>
+                        <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+                            <span class="mdc-linear-progress__bar-inner"></span>
+                        </div>
+                        <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+                            <span class="mdc-linear-progress__bar-inner"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="data-count-item">
+                    <span class='followers'>followers</span>
+                    <div class="mdc-linear-progress mdc-linear-progress--indeterminate">
+                        <div class="mdc-linear-progress__buffering-dots"></div>
+                        <div class="mdc-linear-progress__buffer"></div>
+                        <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+                            <span class="mdc-linear-progress__bar-inner"></span>
+                        </div>
+                        <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+                            <span class="mdc-linear-progress__bar-inner"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="data-count-item loading">
+                    <span class='following'>following</span>
+                    <div class="mdc-linear-progress mdc-linear-progress--indeterminate">
+                        <div class="mdc-linear-progress__buffering-dots"></div>
+                        <div class="mdc-linear-progress__buffer"></div>
+                        <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+                            <span class="mdc-linear-progress__bar-inner"></span>
+                        </div>
+                        <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+                            <span class="mdc-linear-progress__bar-inner"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div>
-                <span class='posts'>posts</span>
-                <span class='followers'>followers</span>
-                <span class='following'>following</span>
-            </div>
-            <div>
-                
-            </div>
-        </div>
-
     </main>
 </body>
 <script src="../js/background/resources.js" type="module"></script>
-<script src="../js/background/manage-tabs.js" type="module"></script>
 <script src="../js/background/instagram.js" type="module"></script>
-<link rel="stylesheet" href="../css/message-to-login.css">
+<script src="../js/background/manage-tabs.js" type="module"></script>
+<script src="../js/background/main.js" type="module"></script>
+<link rel="stylesheet" href="../dist/index.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 </html>

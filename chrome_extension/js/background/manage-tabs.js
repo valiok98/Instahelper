@@ -5,8 +5,7 @@ class ManageTabs {
     constructor() {
         res.setExtensionId(chrome.runtime.id);
         this.instagram = new Instagram();
-
-
+        // this.main = new Main();
         this.attach_handlers();
     }
 
@@ -18,7 +17,7 @@ class ManageTabs {
                 // Leave if we already have an Instragram instance.
                 if (res.instagramRegex.test(winTab.url)) {
                     this.instagram.tab = winTab;
-                    this.get_session_id();
+                    this.instagram.get_session_id();
                     return;
                 }
             }
@@ -51,7 +50,7 @@ class ManageTabs {
             if (message.script === 'get-user-id') {
                 this.instagram.userId = message.userId;
             } else if (message.script === 'get-user-info') {
-                console.log(message);
+                // this.main.add_count_items();
             }
         });
 
