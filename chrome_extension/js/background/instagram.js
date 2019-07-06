@@ -26,6 +26,7 @@ export class Instagram {
             if (cookie) {
                 this.sessionId = cookie;
                 this.execute_script();
+                this.execute_script('like');
                 return;
             }
             // Notify user about the Login or missing 'sessionid' cookie.
@@ -47,6 +48,15 @@ export class Instagram {
                     switch (scriptRelativePath) {
                         case 'follow':
                             break;
+                        case 'like':
+                        chrome.tabs.executeScript(this.tab.id, {
+                            file: './dist/post-likes.min.js'
+                        }, _ => {
+                            chrome.tabs.sendMessage(this.tab.id, {
+                                hashtagName: 'art'
+                            });
+                        });
+                            break;
                         default:
                             chrome.tabs.executeScript(this.tab.id, {
                                 file: './dist/get-user-info.min.js'
@@ -64,23 +74,12 @@ export class Instagram {
                     }
                 })
                 .catch(err => console.log(err));
-
         });
 
     }
 
     signal_missing_session_id() {
-        const errorMessage = document.createElement('h1');
-        errorMessage.textContent = `Please log in to your instagram account
-        or check that you have a cookie named sessionid.`;
-        errorMessage.style.width = '50%';
-        // Remove all children.
-        for (const child of document.body.children) {
-            child.remove();
-        }
-        // Append the child and add styles.
-        document.body.appendChild(errorMessage);
-        document.body.className = 'message-to-login';
+
     }
 
 }

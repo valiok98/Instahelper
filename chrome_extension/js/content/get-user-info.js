@@ -1,6 +1,14 @@
-import { follow, like, get_cookie } from './post-user-actions';
+import { follow, like, get_cookie, random_wait_time } from './post-user-actions';
 
 chrome.runtime.onMessage.addListener(async message => {
+    chrome.runtime.sendMessage({
+        scriptFunction: 'get-user-info:initialUserData',
+        userId: message.userId,
+        userPostCount: message.userPostCount,
+        userFollowerCount: message.userFollowerCount,
+        userFollowingCount: message.userFollowingCount,
+        userProfilePicUrl: message.userProfilePicUrl
+    });
 
     const userInfo = await Promise.all([
         get_followers(message.userId, message.userFollowerCount),
@@ -11,7 +19,7 @@ chrome.runtime.onMessage.addListener(async message => {
     const userFollowing = userInfo[1];
 
     chrome.runtime.sendMessage({
-        script: 'get-user-info',
+        scriptFunction: 'get-user-info:fullUserData',
         userId: message.userId,
         userBio: message.userBio,
         userPostCount: message.userPostCount,
@@ -21,9 +29,7 @@ chrome.runtime.onMessage.addListener(async message => {
         userFollowers,
         userFollowing
     });
-
 });
-
 
 const get_followers = async (userId, userFollowerCount) => {
     let userFollowers = [],
@@ -89,9 +95,4 @@ const get_following = async (userId, userFollowingCount) => {
     return userFollowing;
 };
 
-const random_wait_time = (waitTime = 300) => new Promise((resolve, reject) => {
-    setTimeout(() => {
-        return resolve();
-    }, Math.random() * waitTime);
-});
 

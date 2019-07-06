@@ -367,9 +367,9 @@ body {
           align-items: center;
   -webkit-box-pack: space-evenly;
           justify-content: space-evenly;
-  margin: 0 auto; }
+  margin: 50px auto; }
 
-.user-information img {
+.user-information .user-image {
   width: 150px;
   height: 150px;
   border: 2px solid #b865db;
@@ -400,4 +400,14 @@ body {
   height: 100%;
   display: block;
   text-align: center;
-  font-size: 1.2em; }
+  font-size: 1.2em;
+  -webkit-box-flex: 0;
+          flex: 0 1 auto; }
+
+.post-count, .follower-count, .following-count {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 2.2em;
+  -webkit-box-flex: 1;
+          flex: 1 0 auto; }

@@ -9,6 +9,13 @@ export const get_cookie = name => {
     }
 };
 
+export const random_wait_time = (waitTime = 300) => new Promise((resolve, reject) => {
+    setTimeout(() => {
+        return resolve();
+    }, Math.random() * waitTime);
+});
+
+
 export const follow = instagramId => {
     // Compare whether we are following a normal user or a hashtag.
     if (isNaN(instagramId)) {
@@ -37,6 +44,11 @@ export const follow = instagramId => {
 
 export const like = postId => {
     fetch(`https://www.instagram.com/web/likes/${postId}/like/`, {
-        method: 'POST'
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'x-csrftoken': get_cookie('csrftoken')
+        }
     })
 };

@@ -1,11 +1,12 @@
 import { res } from './resources.js';
 import { Instagram } from './instagram.js'
+import { Main } from './main.js';
 
 class ManageTabs {
     constructor() {
         res.setExtensionId(chrome.runtime.id);
         this.instagram = new Instagram();
-        // this.main = new Main();
+        this.main = new Main();
         this.attach_handlers();
     }
 
@@ -47,15 +48,20 @@ class ManageTabs {
         });
         // Handle content script communication.
         chrome.runtime.onMessage.addListener(message => {
-            if (message.script === 'get-user-id') {
-                this.instagram.userId = message.userId;
-            } else if (message.script === 'get-user-info') {
-                // this.main.add_count_items();
+            console.log(message.scriptFunction)
+            console.log('get-user-info:initialUserData')
+            switch (message.scriptFunction) {
+                case 'get-user-id:userId':
+                    this.instagram.userId = message.userId;
+                    break;
+                case 'get-user-info:initialUserData':
+                    this.main.add_count_items(message);
+                    break;
+                case 'get-user-info:fullUserData':
+                    this.main.add_full_data(message);
+                    break;
             }
         });
-
-
-
     }
 }
 
