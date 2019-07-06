@@ -6,7 +6,8 @@ const autoprefixer = require('autoprefixer');
 module.exports = {
     mode: 'development',
     entry: {
-        'navigate-profile': './chrome_extension/js/content/navigate-profile.js'
+        'get-user-info': ['babel-polyfill', './chrome_extension/js/content/get-user-info.js'],
+        'get-user-id': './chrome_extension/js/content/get-user-id.js'
     },
     output: {
         filename: '[name].min.js',
@@ -58,5 +59,6 @@ module.exports = {
     },
     plugins: [
         new LiveReloadPlugin()
-    ]
+    ],
+    devtool: 'eval'
 };

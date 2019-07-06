@@ -39,17 +39,24 @@ class ManageTabs {
                             chrome.tabs.remove(indexTab.id);
                         }
                     });
-                } else if (tabId === instagramTabId) {
+                } else if (tabId === this.instagram.tab.id) {
                     // The user closed the communicating Instagram instance.
                     // Change the instagramTabId to another running instance.
                     this.instagram.tab = instaTabs[0];
                 }
             });
         });
-        // Handle movement of Instagram tabs.
-        chrome.tabs.onMoved.addListener((tabId, moveInfo) => {
-            console.log(this.instagram.tab.index);
+        // Handle content script communication.
+        chrome.runtime.onMessage.addListener(message => {
+            if (message.script === 'get-user-id') {
+                this.instagram.userId = message.userId;
+            } else if (message.script === 'get-user-info') {
+                console.log(message);
+            }
         });
+
+
+
     }
 }
 

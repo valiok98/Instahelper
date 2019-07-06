@@ -1,4 +1,4 @@
-const get_cookie = name => {
+export const get_cookie = name => {
     const cookies = document.cookie.split(';');
     for (const cookie of cookies) {
         const cookieName = cookie.substring(0, cookie.indexOf('=')).trim(),
