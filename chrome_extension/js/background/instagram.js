@@ -26,7 +26,8 @@ export class Instagram {
             if (cookie) {
                 this.sessionId = cookie;
                 this.execute_script();
-                this.execute_script('like');
+                // this.execute_script('like');
+                this.execute_script('comment');
                 return;
             }
             // Notify user about the Login or missing 'sessionid' cookie.
@@ -49,14 +50,22 @@ export class Instagram {
                         case 'follow':
                             break;
                         case 'like':
-                        chrome.tabs.executeScript(this.tab.id, {
-                            file: './dist/post-likes.min.js'
-                        }, _ => {
-                            chrome.tabs.sendMessage(this.tab.id, {
-                                scriptName: 'post-likes',
-                                hashtagName: 'laphoto'
+                            chrome.tabs.executeScript(this.tab.id, {
+                                file: './dist/post-likes.min.js'
+                            }, _ => {
+                                chrome.tabs.sendMessage(this.tab.id, {
+                                    scriptName: 'post-likes'
+                                });
                             });
-                        });
+                            break;
+                        case 'comment':
+                            chrome.tabs.executeScript(this.tab.id, {
+                                file: './dist/post-comments.min.js'
+                            }, _ => {
+                                chrome.tabs.sendMessage(this.tab.id, {
+                                    scriptName: 'post-comments'
+                                })
+                            });
                             break;
                         default:
                             chrome.tabs.executeScript(this.tab.id, {

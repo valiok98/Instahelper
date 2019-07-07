@@ -5,11 +5,11 @@ chrome.runtime.onMessage.addListener(async message => {
     if (message.scriptName === 'post-likes') {
 
         const tagNames = [
-            'art',
-            'artist',
-            'artwork',
-            'artistsofinstagram',
-            'artistsoninstagram'
+            'fashion',
+            'lafashion',
+            'clothing',
+            'clothes',
+            'fashionnova'
         ];
 
 

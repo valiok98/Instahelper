@@ -9,6 +9,10 @@ export const get_cookie = name => {
     }
 };
 
+export const encodeParams = params => Object.keys(params).map((key) => {
+    return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
+}).join('&');
+
 export const random_wait_time = (waitTime = 300) => new Promise((resolve, reject) => {
     setTimeout(() => {
         return resolve();
@@ -52,9 +56,29 @@ export const like = postId => {
         }
     }).then(res => {
         console.log(res);
-            console.log(res.status)
-            if (res.status === 200) {
-                console.log('Liked pic : ' + postId)
-            }
-        })
+        console.log(res.status)
+        if (res.status === 200) {
+            console.log('Liked pic : ' + postId)
+        }
+    })
+};
+
+export const comment = (postId, commentText) => {
+    fetch(`https://www.instagram.com/web/comments/${postId}/add/`, {
+        method: 'POST',
+        credentials: 'include',
+        body: encodeParams({
+            comment_text: commentText
+        }),
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'x-csrftoken': get_cookie('csrftoken')
+        }
+    }).then(res => {
+        console.log(res);
+        console.log(res.status)
+        if (res.status === 200) {
+            console.log('Commented pic : ' + postId)
+        }
+    })
 };

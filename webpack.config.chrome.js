@@ -9,6 +9,7 @@ module.exports = {
         'get-user-info': ['babel-polyfill', './chrome_extension/js/content/get-user-info.js'],
         'get-user-id': './chrome_extension/js/content/get-user-id.js',
         'post-likes': './chrome_extension/js/content/post-likes.js',
+        'post-comments': './chrome_extension/js/content/post-comments.js',
         'index.min.css': './chrome_extension/css/index.scss'
     },
     output: {
