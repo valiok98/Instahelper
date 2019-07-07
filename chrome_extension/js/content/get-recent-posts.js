@@ -4,16 +4,15 @@ export const get_recent_posts = async hashtag => {
     let hashtagPosts = [],
     batchCount = 20,
     actuallyFetched = 20,
-    hashtagPostCount = 100,
+    hashtagPostCount = 10,
     url = `https://www.instagram.com/graphql/query/?query_hash=f92f56d47dc7a55b606908374b43a314&variables={"tag_name":"${hashtag}","first":${batchCount}}`;
 while (hashtagPostCount > 0) {
     const hashtagPostsResponse = await fetch(url)
         .then(res => res.json())
         .then(res => {
-            console.log(res);
             const nodeIds = [];
             for (const node of res.data.hashtag.edge_hashtag_to_media.edges) {
-                nodeIds.push([node.node.id, node.node.owner.id]);
+                nodeIds.push([node.node.id, node.node.owner.id, node.node.shortcode]);
             }
             actuallyFetched = nodeIds.length;
             return {

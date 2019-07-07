@@ -53,7 +53,8 @@ export class Instagram {
                             file: './dist/post-likes.min.js'
                         }, _ => {
                             chrome.tabs.sendMessage(this.tab.id, {
-                                hashtagName: 'art'
+                                scriptName: 'post-likes',
+                                hashtagName: 'laphoto'
                             });
                         });
                             break;
@@ -62,6 +63,7 @@ export class Instagram {
                                 file: './dist/get-user-info.min.js'
                             }, _ => {
                                 chrome.tabs.sendMessage(this.tab.id, {
+                                    scriptName: 'get-user-info',
                                     userId: this.userId,
                                     userBio,
                                     userPostCount,

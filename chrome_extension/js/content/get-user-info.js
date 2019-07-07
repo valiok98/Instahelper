@@ -1,35 +1,39 @@
 import { follow, like, get_cookie, random_wait_time } from './post-user-actions';
 
 chrome.runtime.onMessage.addListener(async message => {
-    chrome.runtime.sendMessage({
-        scriptFunction: 'get-user-info:initialUserData',
-        userId: message.userId,
-        userPostCount: message.userPostCount,
-        userFollowerCount: message.userFollowerCount,
-        userFollowingCount: message.userFollowingCount,
-        userProfilePicUrl: message.userProfilePicUrl
-    });
+    if (message.scriptName === 'get-user-info') {
+        chrome.runtime.sendMessage({
+            scriptFunction: 'get-user-info:initialUserData',
+            userId: message.userId,
+            userPostCount: message.userPostCount,
+            userFollowerCount: message.userFollowerCount,
+            userFollowingCount: message.userFollowingCount,
+            userProfilePicUrl: message.userProfilePicUrl
+        });
 
-    const userInfo = await Promise.all([
-        get_followers(message.userId, message.userFollowerCount),
-        get_following(message.userId, message.userFollowingCount)
-    ]);
+        const userInfo = await Promise.all([
+            get_followers(message.userId, message.userFollowerCount),
+            get_following(message.userId, message.userFollowingCount)
+        ]);
 
-    const userFollowers = userInfo[0];
-    const userFollowing = userInfo[1];
+        const userFollowers = userInfo[0];
+        const userFollowing = userInfo[1];
 
-    chrome.runtime.sendMessage({
-        scriptFunction: 'get-user-info:fullUserData',
-        userId: message.userId,
-        userBio: message.userBio,
-        userPostCount: message.userPostCount,
-        userFollowerCount: message.userFollowerCount,
-        userFollowingCount: message.userFollowingCount,
-        userProfilePicUrl: message.userProfilePicUrl,
-        userFollowers,
-        userFollowing
-    });
+        chrome.runtime.sendMessage({
+            scriptFunction: 'get-user-info:fullUserData',
+            userId: message.userId,
+            userBio: message.userBio,
+            userPostCount: message.userPostCount,
+            userFollowerCount: message.userFollowerCount,
+            userFollowingCount: message.userFollowingCount,
+            userProfilePicUrl: message.userProfilePicUrl,
+            userFollowers,
+            userFollowing
+        });
+    }
 });
+
+
 
 const get_followers = async (userId, userFollowerCount) => {
     let userFollowers = [],

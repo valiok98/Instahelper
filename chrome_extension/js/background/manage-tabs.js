@@ -48,13 +48,12 @@ class ManageTabs {
         });
         // Handle content script communication.
         chrome.runtime.onMessage.addListener(message => {
-            console.log(message.scriptFunction)
-            console.log('get-user-info:initialUserData')
             switch (message.scriptFunction) {
                 case 'get-user-id:userId':
                     this.instagram.userId = message.userId;
                     break;
                 case 'get-user-info:initialUserData':
+                console.log(message);
                     this.main.add_count_items(message);
                     break;
                 case 'get-user-info:fullUserData':

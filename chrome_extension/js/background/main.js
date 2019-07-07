@@ -39,8 +39,8 @@ export class Main {
             }
             parent.appendChild(newContainer);
             // Change the image.
-            userImgElem.src = userData.userProfilePicUrl;
         });
+        userImgElem.src = userData.userProfilePicUrl;
     }
 
     add_full_data(userData) {

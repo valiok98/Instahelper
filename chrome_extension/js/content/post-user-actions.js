@@ -50,5 +50,11 @@ export const like = postId => {
             'Content-Type': 'application/x-www-form-urlencoded',
             'x-csrftoken': get_cookie('csrftoken')
         }
-    })
+    }).then(res => {
+        console.log(res);
+            console.log(res.status)
+            if (res.status === 200) {
+                console.log('Liked pic : ' + postId)
+            }
+        })
 };
