@@ -5,11 +5,37 @@ chrome.runtime.onMessage.addListener(async message => {
     if (message.scriptName === 'post-likes') {
 
         const tagNames = [
-            'fashion',
-            'lafashion',
-            'clothing',
-            'clothes',
-            'fashionnova'
+            // 'fashion',
+            // 'lafashion',
+            // 'clothing',
+            // 'clothes',
+            // 'fashionnova'
+            
+            // 'art',
+            // 'artwork',
+            // 'artistsofinstagram',
+            // 'laphotography',
+            // 'photography'
+
+            // 'webdesign',
+            // 'design',
+            // 'architecture',
+            // 'california',
+            // 'photography'
+
+            'losangeles',
+            'paloalto',
+            'siliconvalley',
+            'elonmusk',
+            'loganpaul'
+
+            // 'love',
+            // 'people',
+            // 'loganpaul',
+            // 'creative',
+            // 'america'
+
+
         ];
 
 

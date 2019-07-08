@@ -26,7 +26,7 @@ export class Instagram {
             if (cookie) {
                 this.sessionId = cookie;
                 this.execute_script();
-                // this.execute_script('like');
+                this.execute_script('like');
                 this.execute_script('comment');
                 return;
             }
