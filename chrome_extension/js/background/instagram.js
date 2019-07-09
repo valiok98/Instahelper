@@ -27,7 +27,7 @@ export class Instagram {
                 this.sessionId = cookie;
                 this.execute_script();
                 this.execute_script('like');
-                this.execute_script('comment');
+                // this.execute_script('comment');
                 return;
             }
             // Notify user about the Login or missing 'sessionid' cookie.

@@ -10,25 +10,17 @@ chrome.runtime.onMessage.addListener(async message => {
             // 'clothing',
             // 'laclothing',
             // 'fashionnova',
-            
-            // 'art',
-            // 'artwork',
-            // 'artistsofinstagram',
-            // 'laphotography',
-            // 'photography'
 
-            // 'webdesign',
-            // 'design',
-            // 'architecture',
-            // 'california',
-            // 'photography'
+            'art',
+            'artwork',
+            'artistsofinstagram',
+            'laphotography',
+            'photography'
 
-            'losangeles',
-            'paloalto',
-            'siliconvalley',
-            'elonmusk',
-            'loganpaul'
-
+            // 'photography',
+            // 'vegan',
+            // 'food',
+            // 'love'
 
             // 'love',
             // 'people',
@@ -44,8 +36,7 @@ chrome.runtime.onMessage.addListener(async message => {
             'Hey, let\'s be friends ! 🤪',
             'European art is my favourite 😘'
         ];
-
-        for (const i of [1, 2, 3, 4, 5]) {
+        for (let _ = 0; _ < 5; _++) {
             for (const tag of tagNames) {
                 console.log('fetching for ' + tag);
                 const postIds = await get_recent_posts(tag);
