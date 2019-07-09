@@ -1,4 +1,5 @@
 @import "@material/linear-progress/mdc-linear-progress";
+@import "@material/textfield/mdc-text-field";
 
 *{
     margin: 0;
@@ -55,4 +56,16 @@ body {
     text-align: center;
     font-size: 2.2em;
     flex: 1 0 auto;
+}
+
+// Section about the user action - comments, tags, location.
+.user-actions {
+    display: flex;
+    justify-content: space-evenly;
+    width: 400px;
+    margin: 50px auto;
+}
+
+.user-actions > .user-action {
+    width: 100px;
 }

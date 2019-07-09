@@ -11,11 +11,17 @@ chrome.runtime.onMessage.addListener(async message => {
             // 'clothes',
             // 'fashionnova'
 
-            'art',
-            'artwork',
-            'artistsofinstagram',
-            'laphotography',
-            'photography'
+            // 'art',
+            // 'artwork',
+            // 'artistsofinstagram',
+            // 'laphotography',
+            // 'photography'
+
+            'losangeles',
+            'newyork',
+            'newjersey',
+            'california',
+            'paloalto'
 
             // 'love',
             // 'instagood',
@@ -33,11 +39,10 @@ chrome.runtime.onMessage.addListener(async message => {
         ];
 
         // LIKE THE FEED POSTS.
-        const feedPostIds = await get_recent_feed_posts();
-        for(const feedPostId of feedPostIds) {
-            await random_wait_time(40000);
-            like(feedPostId[0]);
-        }
+        // Ideally run the following function twice a day, but it all depends
+        // on the amount of people you follow.
+
+        // await like_feed_posts();
 
         // LIKE POSTS FROM HASHTAGS.
         for (let _ = 0; _ < 5; _++) {
@@ -53,3 +58,12 @@ chrome.runtime.onMessage.addListener(async message => {
         }
     }
 });
+
+const like_feed_posts = async () => {
+    const feedPostIds = await get_recent_feed_posts();
+    for(const feedPostId of feedPostIds) {
+        await random_wait_time(40000);
+        like(feedPostId[0]);
+    }
+    return Promise.resolve();
+};

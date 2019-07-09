@@ -50,14 +50,16 @@ class ManageTabs {
         chrome.runtime.onMessage.addListener(message => {
             switch (message.scriptFunction) {
                 case 'get-user-id:userId':
+                    // Set the userId fetched from cookie to the Instagram instance.
                     this.instagram.userId = message.userId;
                     break;
                 case 'get-user-info:initialUserData':
-                console.log(message);
-                    this.main.add_count_items(message);
+                    // Render the initial user information - follower, following, post count.
+                    this.main.add_user_information_count(message);
                     break;
                 case 'get-user-info:fullUserData':
-                    this.main.add_full_data(message);
+                    // Render the tabs with followers, following, posts.
+                    this.main.add_user_information_tabs(message);
                     break;
             }
         });

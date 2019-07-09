@@ -11,11 +11,17 @@ chrome.runtime.onMessage.addListener(async message => {
             // 'laclothing',
             // 'fashionnova',
 
-            'art',
-            'artwork',
-            'artistsofinstagram',
-            'laphotography',
-            'photography'
+            // 'art',
+            // 'artwork',
+            // 'artistsofinstagram',
+            // 'laphotography',
+            // 'photography'
+
+            'losangeles',
+            'newyork',
+            'newjersey',
+            'california',
+            'paloalto'
 
             // 'photography',
             // 'vegan',
@@ -30,11 +36,20 @@ chrome.runtime.onMessage.addListener(async message => {
         ];
 
         const comments = [
-            'I make similiar stuff, you can check it out ! 🥰',
-            'Love the pic so much ♥️',
-            'My pics are not as good as yours 😪',
-            'Hey, let\'s be friends ! 🤪',
-            'European art is my favourite 😘'
+            'I really like your recent posts, keep up the good work ! 😉',
+            'Continuing with posts like that will get you places, believe me 😚',
+            'There\'s something special about your posts...😊',
+            'Keep amazing us all with this crazy quality ! 🤩',
+            'I think you have a stunning Instagram account. Agree ? 😋'
+
+
+            // 'I make similiar stuff, you can check it out ! 🥰',
+            // 'Love the pic so much ♥️',
+            // 'My pics are not as good as yours 😪',
+            // 'Hey, let\'s be friends ! 🤪',
+            // 'European art is my favourite 😘'
+
+
         ];
         for (let _ = 0; _ < 5; _++) {
             for (const tag of tagNames) {

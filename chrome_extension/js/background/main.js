@@ -11,8 +11,11 @@ export class Main {
 
         }
     }
-
-    add_count_items(userData) {
+    /**
+     * A function to render the user information and replace the loading bars.
+     * @param {Object} userData - the object containing amount of followers, following, posts.
+     */
+    add_user_information_count(userData) {
         const parentElems = document.querySelectorAll('.data-count-item'),
             userImgElem = document.querySelector('.user-image');
         // Remove the loading bars.
@@ -42,8 +45,11 @@ export class Main {
         });
         userImgElem.src = userData.userProfilePicUrl;
     }
-
-    add_full_data(userData) {
-
+    /**
+     * A function to 
+     * @param {Object} userData - the object containing followers, following, posts.
+     */
+    add_user_information_tabs(userData) {
+        
     }
 }
