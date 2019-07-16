@@ -1,0 +1,48 @@
+.user-information {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 50px auto;
+}
+
+.user-information .user-image {
+    width: 150px;
+    height: 150px;
+    border: 2px solid #b865db;
+    border-radius: 50%;
+}
+
+.user-information .user-data-count {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.user-information .data-count-item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.user-information .user-data-count .posts,
+.user-information .user-data-count .followers,
+.user-information .user-data-count .following {
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-align: center;
+    font-size: 1.2em;
+    flex: 0 1 auto;
+}
+
+.post-count,
+.follower-count,
+.following-count {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 2.2em;
+    flex: 1 0 auto;
+}

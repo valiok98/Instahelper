@@ -1913,16 +1913,7 @@
     -webkit-transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75);
             transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75); } }
 
-* {
-  margin: 0;
-  padding: 0;
-  font-family: Roboto, sans-serif; }
-
-body {
-  background: gainsboro; }
-
 .user-information {
-  width: 400px;
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
@@ -1966,7 +1957,9 @@ body {
   -webkit-box-flex: 0;
           flex: 0 1 auto; }
 
-.post-count, .follower-count, .following-count {
+.post-count,
+.follower-count,
+.following-count {
   width: 100%;
   height: 100%;
   text-align: center;
@@ -1975,12 +1968,61 @@ body {
           flex: 1 0 auto; }
 
 .user-actions {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-          justify-content: space-evenly;
-  width: 400px;
-  margin: 50px auto; }
+  box-sizing: border-box;
+  height: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  -webkit-box-pack: center;
+          justify-content: center; }
 
-.user-actions > .user-action {
-  width: 100px; }
+.user-actions .user-action {
+  justify-self: center; }
+
+@media only screen and (max-width: 1000px) {
+  .user-actions {
+    box-sizing: border-box;
+    height: 200px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-flow: column nowrap;
+    -webkit-box-align: center;
+            align-items: center; }
+  .user-actions .user-action,
+  .user-actions .mdc-text-field {
+    width: 100%; } }
+
+.terms-lists {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  -webkit-box-pack: center;
+          justify-content: center; }
+
+.terms-list-comments i.material-icons,
+.terms-list-tags i.material-icons,
+.terms-list-locations i.material-icons {
+  margin-left: auto;
+  margin-right: 0; }
+
+.terms-list-comments i.material-icons:hover,
+.terms-list-tags i.material-icons:hover,
+.terms-list-locations i.material-icons:hover {
+  color: red; }
+
+@media only screen and (max-width: 1000px) {
+  .terms-lists {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    -webkit-box-pack: center;
+            justify-content: center; } }
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, sans-serif; }
+
+body {
+  background: gainsboro; }

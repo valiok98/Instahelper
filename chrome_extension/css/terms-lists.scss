@@ -1,0 +1,33 @@
+.terms-lists {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    justify-content: center;
+}
+
+.terms-list-comments i.material-icons,
+.terms-list-tags i.material-icons,
+.terms-list-locations i.material-icons {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.terms-list-comments i.material-icons:hover,
+.terms-list-tags i.material-icons:hover,
+.terms-list-locations i.material-icons:hover {
+    color: red;
+}
+
+@media only screen and (max-width: 1000px) {
+    .terms-lists {
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+    }
+
+    .terms-lists > .terms-list-comments {}
+    .terms-lists > .terms-list-tags {}
+    .terms-lists > .terms-list-locations {}
+
+}

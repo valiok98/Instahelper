@@ -1,15 +1,14 @@
+import { LoadingBars } from './components/loading-bars.js';
+import { FilterTerms } from './components/filter-terms.js';
+import { TermsLists } from './components/terms-lists.js';
+import { Store } from './components/store/store.js';
+
 export class Main {
     constructor() {
-        this.loadingElems = [];
-
-        this.add_loading_bars();
-    }
-
-    add_loading_bars() {
-        for (let elem of document.querySelectorAll('.mdc-linear-progress')) {
-            this.loadingElems.push(mdc.linearProgress.MDCLinearProgress.attachTo(elem));
-
-        }
+        this.store = new Store();
+        this.loadingBars = new LoadingBars(this.store);
+        this.filterTerms = new FilterTerms(this.store);
+        this.termsLiss = new TermsLists(this.store);
     }
     /**
      * A function to render the user information and replace the loading bars.
@@ -18,11 +17,9 @@ export class Main {
     add_user_information_count(userData) {
         const parentElems = document.querySelectorAll('.data-count-item'),
             userImgElem = document.querySelector('.user-image');
-        // Remove the loading bars.
-        for (const elem of this.loadingElems) {
-            elem.close()
-            elem.root_.remove();
-        }
+
+        this.loadingBars.destroy_objects();
+
         // Add the retrieved data count.
         parentElems.forEach((parent, index) => {
             const newContainer = document.createElement('div');
@@ -50,6 +47,6 @@ export class Main {
      * @param {Object} userData - the object containing followers, following, posts.
      */
     add_user_information_tabs(userData) {
-        
+
     }
 }

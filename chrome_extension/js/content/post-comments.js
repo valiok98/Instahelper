@@ -11,11 +11,11 @@ chrome.runtime.onMessage.addListener(async message => {
             // 'laclothing',
             // 'fashionnova',
 
-            // 'art',
-            // 'artwork',
-            // 'artistsofinstagram',
-            // 'laphotography',
-            // 'photography'
+            'art',
+            'artwork',
+            'artistsofinstagram',
+            'laphotography',
+            'photography',
 
             'losangeles',
             'newyork',

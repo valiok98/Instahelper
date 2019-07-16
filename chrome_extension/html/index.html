@@ -55,40 +55,56 @@
             </div>
         </div>
         <div class="user-actions">
-            <div class="user-action comments">
-                <div class="mdc-text-field">
+            <div class="user-action">
+                <div class="mdc-text-field mdc-text-field--with-leading-icon comments">
+                    <i class="material-icons mdc-text-field__icon">chat_bubble</i>
                     <input class="mdc-text-field__input" id="text-field-comments-input">
                     <div class="mdc-line-ripple"></div>
                     <label for="text-field-hero-input" class="mdc-floating-label">Comment</label>
                 </div>
             </div>
-            <div class="user-action tags">
-                <div class="mdc-text-field">
+            <div class="user-action">
+                <div class="mdc-text-field mdc-text-field--with-leading-icon tags">
+                    <i class="material-icons mdc-text-field__icon">more</i>
                     <input class="mdc-text-field__input" id="text-field-hashtag-input">
                     <div class="mdc-line-ripple"></div>
                     <label for="text-field-hero-input" class="mdc-floating-label">Hashtag</label>
                 </div>
             </div>
-            <div class="user-action locations">
-                <div class="mdc-text-field">
+            <div class="user-action">
+                <div class="mdc-text-field mdc-text-field--with-leading-icon locations">
+                    <i class="material-icons mdc-text-field__icon">location_on</i>
                     <input class="mdc-text-field__input" id="text-field-location-input">
                     <div class="mdc-line-ripple"></div>
                     <label for="text-field-hero-input" class="mdc-floating-label">Location</label>
                 </div>
             </div>
         </div>
-        <div class="user-information-analytics">
-
+        <div class="terms-lists">
+            <div class="terms-list-comments">
+                <ul class="mdc-list">
+                    <li class="mdc-list-item" tabindex="0">
+                        <span class="mdc-list-item__text">Single-line item</span>
+                        <i class="material-icons">delete</i>
+                    </li>
+                </ul>
+            </div>
+            <div class="terms-list-tags">
+                <ul class="mdc-list">
+                </ul>
+            </div>
+            <div class="terms-list-locations">
+                <ul class="mdc-list">
+                </ul>
+            </div>
         </div>
     </main>
 </body>
-<script src="../js/background/resources.js" type="module"></script>
-<script src="../js/background/instagram.js" type="module"></script>
-<script src="../js/background/manage-tabs.js" type="module"></script>
-<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-<script src="../js/background/main.js" type="module"></script>
-<link rel="stylesheet" href="../dist/index.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+<script src="https://unpkg.com/@reactivex/rxjs@6.5.2/dist/global/rxjs.umd.js"></script>
+<script src="../js/background/manage-tabs.js" type="module"></script>
+<link rel="stylesheet" href="../dist/index.min.css">
 
 </html>

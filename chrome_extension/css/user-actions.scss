@@ -1,0 +1,27 @@
+// Section about the user action - comments, tags, location.
+.user-actions {
+    box-sizing: border-box;
+    height: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    justify-content: center;
+}
+
+.user-actions .user-action {
+    justify-self: center;
+}
+
+@media only screen and (max-width: 1000px) {
+    .user-actions {
+        box-sizing: border-box;
+        height: 200px;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+
+    .user-actions .user-action,
+    .user-actions .mdc-text-field {
+        width: 100%;
+    }
+}
