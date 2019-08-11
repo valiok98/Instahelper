@@ -5,11 +5,12 @@
     margin: 50px auto;
 }
 
-.user-information .user-image > img {
+.user-information .user-image>img {
     width: 150px;
     height: 150px;
     border: 2px solid #b865db;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .user-information .user-data-count {

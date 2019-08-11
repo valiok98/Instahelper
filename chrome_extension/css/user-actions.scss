@@ -1,6 +1,6 @@
 // Section about the user action - comments, tags, location.
 .user-actions {
-    box-sizing: border-box;
+    margin: 10px;
     height: 60px;
     display: grid;
     grid-template-columns: repeat(3, 300px);
@@ -13,7 +13,8 @@
 
 @media only screen and (max-width: 1000px) {
     .user-actions {
-        box-sizing: border-box;
+        margin: 10px;
+        width: 80%;
         height: 200px;
         display: flex;
         flex-flow: column nowrap;

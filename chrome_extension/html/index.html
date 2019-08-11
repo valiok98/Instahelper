@@ -56,44 +56,87 @@
                 </div>
             </div>
         </div>
-        <div class="user-actions">
-            <div class="user-action">
-                <div class="mdc-text-field mdc-text-field--with-leading-icon comments">
-                    <i class="material-icons mdc-text-field__icon">chat_bubble</i>
-                    <input class="mdc-text-field__input" id="text-field-comments-input">
-                    <div class="mdc-line-ripple"></div>
-                    <label for="text-field-hero-input" class="mdc-floating-label">Comment</label>
+        <div class="content">
+            <div class="mdc-tab-bar" role="tablist">
+                <div class="mdc-tab-scroller">
+                    <div class="mdc-tab-scroller__scroll-area">
+                        <div class="mdc-tab-scroller__scroll-content">
+                            <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
+                                <span class="mdc-tab__content">
+                                    <span class="mdc-tab__icon material-icons" aria-hidden="true">edit</span>
+                                    <span class="mdc-tab__text-label">create action</span>
+                                </span>
+                                <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                                    <span
+                                        class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                                </span>
+                                <span class="mdc-tab__ripple"></span>
+                            </button>
+                            <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1">
+                                <span class="mdc-tab__content">
+                                    <span class="mdc-tab__icon material-icons" aria-hidden="true">done_outline</span>
+                                    <span class="mdc-tab__text-label">posted actions</span>
+                                </span>
+                                <span class="mdc-tab-indicator">
+                                    <span
+                                        class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                                </span>
+                                <span class="mdc-tab__ripple"></span>
+                            </button>
+                            <button class="mdc-tab" role="tab" aria-selected="false" tabindex="-1">
+                                <span class="mdc-tab__content">
+                                    <span class="mdc-tab__icon material-icons" aria-hidden="true">bar_chart</span>
+                                    <span class="mdc-tab__text-label">analysis</span>
+                                </span>
+                                <span class="mdc-tab-indicator">
+                                    <span
+                                        class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                                </span>
+                                <span class="mdc-tab__ripple"></span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="user-action">
-                <div class="mdc-text-field mdc-text-field--with-leading-icon tags">
-                    <i class="material-icons mdc-text-field__icon">more</i>
-                    <input class="mdc-text-field__input" id="text-field-hashtag-input">
-                    <div class="mdc-line-ripple"></div>
-                    <label for="text-field-hero-input" class="mdc-floating-label">Hashtag</label>
+            <div class="user-actions">
+                <div class="user-action">
+                    <div class="mdc-text-field mdc-text-field--with-leading-icon comments">
+                        <i class="material-icons mdc-text-field__icon">chat_bubble</i>
+                        <input class="mdc-text-field__input" id="text-field-comments-input">
+                        <div class="mdc-line-ripple"></div>
+                        <label for="text-field-hero-input" class="mdc-floating-label">Comment</label>
+                    </div>
+                </div>
+                <div class="user-action">
+                    <div class="mdc-text-field mdc-text-field--with-leading-icon tags">
+                        <i class="material-icons mdc-text-field__icon">more</i>
+                        <input class="mdc-text-field__input" id="text-field-hashtag-input">
+                        <div class="mdc-line-ripple"></div>
+                        <label for="text-field-hero-input" class="mdc-floating-label">Hashtag</label>
+                    </div>
+                </div>
+                <div class="user-action">
+                    <div class="mdc-text-field mdc-text-field--with-leading-icon locations">
+                        <i class="material-icons mdc-text-field__icon">location_on</i>
+                        <input class="mdc-text-field__input" id="text-field-location-input">
+                        <div class="mdc-line-ripple"></div>
+                        <label for="text-field-hero-input" class="mdc-floating-label">Location</label>
+                    </div>
                 </div>
             </div>
-            <div class="user-action">
-                <div class="mdc-text-field mdc-text-field--with-leading-icon locations">
-                    <i class="material-icons mdc-text-field__icon">location_on</i>
-                    <input class="mdc-text-field__input" id="text-field-location-input">
-                    <div class="mdc-line-ripple"></div>
-                    <label for="text-field-hero-input" class="mdc-floating-label">Location</label>
+            <div class="terms-lists">
+                <div class="terms-list-comments">
+                    <ul class="mdc-list">
+                    </ul>
                 </div>
-            </div>
-        </div>
-        <div class="terms-lists">
-            <div class="terms-list-comments">
-                <ul class="mdc-list">
-                </ul>
-            </div>
-            <div class="terms-list-tags">
-                <ul class="mdc-list">
-                </ul>
-            </div>
-            <div class="terms-list-locations">
-                <ul class="mdc-list">
-                </ul>
+                <div class="terms-list-tags">
+                    <ul class="mdc-list">
+                    </ul>
+                </div>
+                <div class="terms-list-locations">
+                    <ul class="mdc-list">
+                    </ul>
+                </div>
             </div>
         </div>
     </main>

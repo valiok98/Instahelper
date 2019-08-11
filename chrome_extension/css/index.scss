@@ -1,5 +1,10 @@
 @import "@material/linear-progress/mdc-linear-progress";
 @import "@material/textfield/mdc-text-field";
+@import "@material/tab-bar/mdc-tab-bar";
+@import "@material/tab-scroller/mdc-tab-scroller";
+@import "@material/tab-indicator/mdc-tab-indicator";
+@import "@material/tab/mdc-tab";
+@import "./content-tabs.scss";
 @import './user-information.scss';
 @import './user-actions.scss';
 @import './terms-lists.scss';
@@ -15,6 +20,8 @@ body {
     background: gainsboro;
 }
 
-.user-image > img {
-    cursor: pointer;
+main .content {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
 }

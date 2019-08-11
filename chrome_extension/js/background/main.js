@@ -1,3 +1,4 @@
+import { ContentTabs } from './components/content-tabs.js';
 import { LoadingBars } from './components/loading-bars.js';
 import { FilterTerms } from './components/filter-terms.js';
 import { TermsLists } from './components/terms-lists.js';
@@ -7,6 +8,7 @@ export class Main {
     constructor() {
         this.store = new Store();
         window.store = this.store;
+        this.contentTabs = new ContentTabs(this.store);
         this.loadingBars = new LoadingBars(this.store);
         this.filterTerms = new FilterTerms(this.store);
         this.termsLiss = new TermsLists(this.store);

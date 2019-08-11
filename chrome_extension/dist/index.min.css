@@ -1913,6 +1913,473 @@
     -webkit-transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75);
             transform: translateX(calc(0 - 0%)) translateY(-130%) scale(0.75); } }
 
+/**
+ * @license
+ * Copyright 2018 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+/**
+ * @license
+ * Copyright 2018 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+.mdc-tab-bar {
+  width: 100%; }
+
+/**
+ * @license
+ * Copyright 2018 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+.mdc-tab-scroller {
+  overflow-y: hidden; }
+
+.mdc-tab-scroller__test {
+  position: absolute;
+  top: -9999px;
+  width: 100px;
+  height: 100px;
+  overflow-x: scroll; }
+
+.mdc-tab-scroller__scroll-area {
+  -webkit-overflow-scrolling: touch;
+  display: -webkit-box;
+  display: flex;
+  overflow-x: hidden; }
+
+.mdc-tab-scroller__scroll-area::-webkit-scrollbar,
+.mdc-tab-scroller__test::-webkit-scrollbar {
+  display: none; }
+
+.mdc-tab-scroller__scroll-area--scroll {
+  overflow-x: scroll; }
+
+.mdc-tab-scroller__scroll-content {
+  position: relative;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-flex: 1;
+          flex: 1 0 auto;
+  -webkit-transform: none;
+          transform: none;
+  will-change: transform; }
+
+.mdc-tab-scroller--align-start .mdc-tab-scroller__scroll-content {
+  -webkit-box-pack: start;
+          justify-content: flex-start; }
+
+.mdc-tab-scroller--align-end .mdc-tab-scroller__scroll-content {
+  -webkit-box-pack: end;
+          justify-content: flex-end; }
+
+.mdc-tab-scroller--align-center .mdc-tab-scroller__scroll-content {
+  -webkit-box-pack: center;
+          justify-content: center; }
+
+.mdc-tab-scroller--animating .mdc-tab-scroller__scroll-area {
+  -webkit-overflow-scrolling: auto; }
+
+.mdc-tab-scroller--animating .mdc-tab-scroller__scroll-content {
+  -webkit-transition: 250ms -webkit-transform cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms -webkit-transform cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms transform cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms transform cubic-bezier(0.4, 0, 0.2, 1), 250ms -webkit-transform cubic-bezier(0.4, 0, 0.2, 1); }
+
+/**
+ * @license
+ * Copyright 2018 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+/**
+ * @license
+ * Copyright 2018 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+.mdc-tab-indicator {
+  display: -webkit-box;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1; }
+  .mdc-tab-indicator .mdc-tab-indicator__content--underline {
+    border-color: #6200ee;
+    /* @alternate */
+    border-color: var(--mdc-theme-primary, #6200ee); }
+  .mdc-tab-indicator .mdc-tab-indicator__content--underline {
+    border-top-width: 2px; }
+  .mdc-tab-indicator .mdc-tab-indicator__content--icon {
+    color: #018786;
+    /* @alternate */
+    color: var(--mdc-theme-secondary, #018786); }
+  .mdc-tab-indicator .mdc-tab-indicator__content--icon {
+    height: 34px;
+    font-size: 34px; }
+
+.mdc-tab-indicator__content {
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  opacity: 0; }
+
+.mdc-tab-indicator__content--underline {
+  align-self: flex-end;
+  box-sizing: border-box;
+  width: 100%;
+  border-top-style: solid; }
+
+.mdc-tab-indicator__content--icon {
+  align-self: center;
+  margin: 0 auto; }
+
+.mdc-tab-indicator--active .mdc-tab-indicator__content {
+  opacity: 1; }
+
+.mdc-tab-indicator .mdc-tab-indicator__content {
+  -webkit-transition: 250ms -webkit-transform cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms -webkit-transform cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms transform cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms transform cubic-bezier(0.4, 0, 0.2, 1), 250ms -webkit-transform cubic-bezier(0.4, 0, 0.2, 1); }
+
+.mdc-tab-indicator--no-transition .mdc-tab-indicator__content {
+  -webkit-transition: none;
+  transition: none; }
+
+.mdc-tab-indicator--fade .mdc-tab-indicator__content {
+  -webkit-transition: 150ms opacity linear;
+  transition: 150ms opacity linear; }
+
+.mdc-tab-indicator--active.mdc-tab-indicator--fade .mdc-tab-indicator__content {
+  -webkit-transition-delay: 100ms;
+          transition-delay: 100ms; }
+
+/**
+ * @license
+ * Copyright 2018 Google Inc.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+.mdc-tab {
+  position: relative;
+  font-family: Roboto, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-size: 0.875rem;
+  line-height: 2.25rem;
+  font-weight: 500;
+  letter-spacing: 0.08929em;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding-right: 24px;
+  padding-left: 24px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-flex: 1;
+          flex: 1 0 auto;
+  -webkit-box-pack: center;
+          justify-content: center;
+  box-sizing: border-box;
+  height: 48px;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border: none;
+  outline: none;
+  background: none;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-appearance: none;
+  z-index: 1; }
+  .mdc-tab .mdc-tab__text-label {
+    color: rgba(0, 0, 0, 0.6); }
+  .mdc-tab .mdc-tab__icon {
+    color: rgba(0, 0, 0, 0.54);
+    fill: currentColor; }
+  .mdc-tab::-moz-focus-inner {
+    padding: 0;
+    border: 0; }
+
+.mdc-tab--min-width {
+  -webkit-box-flex: 0;
+          flex: 0 1 auto; }
+
+.mdc-tab__ripple {
+  --mdc-ripple-fg-size: 0;
+  --mdc-ripple-left: 0;
+  --mdc-ripple-top: 0;
+  --mdc-ripple-fg-scale: 1;
+  --mdc-ripple-fg-translate-end: 0;
+  --mdc-ripple-fg-translate-start: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+  .mdc-tab__ripple::before, .mdc-tab__ripple::after {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    content: ""; }
+  .mdc-tab__ripple::before {
+    -webkit-transition: opacity 15ms linear, background-color 15ms linear;
+    transition: opacity 15ms linear, background-color 15ms linear;
+    z-index: 1; }
+  .mdc-tab__ripple.mdc-ripple-upgraded::before {
+    -webkit-transform: scale(var(--mdc-ripple-fg-scale, 1));
+            transform: scale(var(--mdc-ripple-fg-scale, 1)); }
+  .mdc-tab__ripple.mdc-ripple-upgraded::after {
+    top: 0;
+    /* @noflip */
+    left: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-transform-origin: center center;
+            transform-origin: center center; }
+  .mdc-tab__ripple.mdc-ripple-upgraded--unbounded::after {
+    top: var(--mdc-ripple-top, 0);
+    /* @noflip */
+    left: var(--mdc-ripple-left, 0); }
+  .mdc-tab__ripple.mdc-ripple-upgraded--foreground-activation::after {
+    -webkit-animation: mdc-ripple-fg-radius-in 225ms forwards, mdc-ripple-fg-opacity-in 75ms forwards;
+            animation: mdc-ripple-fg-radius-in 225ms forwards, mdc-ripple-fg-opacity-in 75ms forwards; }
+  .mdc-tab__ripple.mdc-ripple-upgraded--foreground-deactivation::after {
+    -webkit-animation: mdc-ripple-fg-opacity-out 150ms;
+            animation: mdc-ripple-fg-opacity-out 150ms;
+    -webkit-transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1));
+            transform: translate(var(--mdc-ripple-fg-translate-end, 0)) scale(var(--mdc-ripple-fg-scale, 1)); }
+  .mdc-tab__ripple::before, .mdc-tab__ripple::after {
+    top: calc(50% - 100%);
+    /* @noflip */
+    left: calc(50% - 100%);
+    width: 200%;
+    height: 200%; }
+  .mdc-tab__ripple.mdc-ripple-upgraded::after {
+    width: var(--mdc-ripple-fg-size, 100%);
+    height: var(--mdc-ripple-fg-size, 100%); }
+  .mdc-tab__ripple::before, .mdc-tab__ripple::after {
+    background-color: #6200ee; }
+    @supports not (-ms-ime-align: auto) {
+      .mdc-tab__ripple::before, .mdc-tab__ripple::after {
+        /* @alternate */
+        background-color: var(--mdc-theme-primary, #6200ee); } }
+  .mdc-tab__ripple:hover::before {
+    opacity: 0.04; }
+  .mdc-tab__ripple:not(.mdc-ripple-upgraded):focus::before, .mdc-tab__ripple.mdc-ripple-upgraded--background-focused::before {
+    -webkit-transition-duration: 75ms;
+            transition-duration: 75ms;
+    opacity: 0.12; }
+  .mdc-tab__ripple:not(.mdc-ripple-upgraded)::after {
+    -webkit-transition: opacity 150ms linear;
+    transition: opacity 150ms linear; }
+  .mdc-tab__ripple:not(.mdc-ripple-upgraded):active::after {
+    -webkit-transition-duration: 75ms;
+            transition-duration: 75ms;
+    opacity: 0.12; }
+  .mdc-tab__ripple.mdc-ripple-upgraded {
+    --mdc-ripple-fg-opacity: 0.12; }
+
+.mdc-tab__content {
+  position: relative;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  height: inherit;
+  pointer-events: none; }
+
+.mdc-tab__text-label,
+.mdc-tab__icon {
+  -webkit-transition: 150ms color linear;
+  transition: 150ms color linear;
+  z-index: 2; }
+
+.mdc-tab__text-label {
+  display: inline-block;
+  line-height: 1; }
+
+.mdc-tab__icon {
+  width: 24px;
+  height: 24px;
+  font-size: 24px; }
+
+.mdc-tab--stacked {
+  height: 72px; }
+
+.mdc-tab--stacked .mdc-tab__content {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+          justify-content: space-between; }
+
+.mdc-tab--stacked .mdc-tab__icon {
+  padding-top: 12px; }
+
+.mdc-tab--stacked .mdc-tab__text-label {
+  padding-bottom: 16px; }
+
+.mdc-tab--active .mdc-tab__text-label {
+  color: #6200ee;
+  /* @alternate */
+  color: var(--mdc-theme-primary, #6200ee); }
+
+.mdc-tab--active .mdc-tab__icon {
+  color: #6200ee;
+  /* @alternate */
+  color: var(--mdc-theme-primary, #6200ee);
+  fill: currentColor; }
+
+.mdc-tab--active .mdc-tab__text-label,
+.mdc-tab--active .mdc-tab__icon {
+  -webkit-transition-delay: 100ms;
+          transition-delay: 100ms; }
+
+.mdc-tab:not(.mdc-tab--stacked) .mdc-tab__icon + .mdc-tab__text-label {
+  /* @noflip */
+  padding-left: 8px;
+  /* @noflip */
+  padding-right: 0; }
+  [dir="rtl"] .mdc-tab:not(.mdc-tab--stacked) .mdc-tab__icon + .mdc-tab__text-label, .mdc-tab:not(.mdc-tab--stacked) .mdc-tab__icon + .mdc-tab__text-label[dir="rtl"] {
+    /* @noflip */
+    padding-left: 0;
+    /* @noflip */
+    padding-right: 8px; }
+
+.mdc-tab-bar {
+  margin: 10px;
+  width: 900px; }
+
+.mdc-tab-bar button {
+  -webkit-box-flex: 1;
+          flex: 1 1 33%; }
+
+@media only screen and (max-width: 1000px) {
+  .mdc-tab-bar {
+    margin: 10px;
+    width: 100%;
+    height: 200px; }
+  .mdc-tab-bar .mdc-tab-scroller__scroll-content {
+    width: 100%;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-flow: column nowrap; }
+  .mdc-tab-bar button {
+    -webkit-box-flex: 1;
+            flex: 1 1 100%; } }
+
 .user-information {
   display: -webkit-box;
   display: flex;
@@ -1926,7 +2393,8 @@
   width: 150px;
   height: 150px;
   border: 2px solid #b865db;
-  border-radius: 50%; }
+  border-radius: 50%;
+  cursor: pointer; }
 
 .user-information .user-data-count {
   width: 150px;
@@ -1968,7 +2436,7 @@
           flex: 1 0 auto; }
 
 .user-actions {
-  box-sizing: border-box;
+  margin: 10px;
   height: 60px;
   display: grid;
   grid-template-columns: repeat(3, 300px);
@@ -1980,7 +2448,8 @@
 
 @media only screen and (max-width: 1000px) {
   .user-actions {
-    box-sizing: border-box;
+    margin: 10px;
+    width: 80%;
     height: 200px;
     display: -webkit-box;
     display: flex;
@@ -1994,28 +2463,24 @@
     width: 100%; } }
 
 .terms-lists {
-  box-sizing: border-box;
+  margin: 10px;
   display: grid;
   grid-template-columns: repeat(3, 300px);
   -webkit-box-pack: center;
           justify-content: center; }
 
-.terms-list-comments i.material-icons,
-.terms-list-tags i.material-icons,
-.terms-list-locations i.material-icons {
+.terms-lists i.material-icons {
   margin-left: auto;
   margin-right: 0; }
 
-.terms-list-comments i.material-icons:hover,
-.terms-list-tags i.material-icons:hover,
-.terms-list-locations i.material-icons:hover {
+.terms-lists i.material-icons:hover {
   color: red; }
 
 @media only screen and (max-width: 1000px) {
   .terms-lists {
-    box-sizing: border-box;
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 33%);
     -webkit-box-pack: center;
             justify-content: center; } }
 
@@ -2028,5 +2493,11 @@
 body {
   background: gainsboro; }
 
-.user-image > img {
-  cursor: pointer; }
+main .content {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+          align-items: center; }

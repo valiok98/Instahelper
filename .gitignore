@@ -1,3 +1,10 @@
 /node_modules
 /.vscode
 /.DS_Store
+/dist
+# All the source files from previous version.
+/src
+# All the entry points from previous version.
+index.*
+server.js
+webpack.config.js
