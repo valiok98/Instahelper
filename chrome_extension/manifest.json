@@ -2,7 +2,7 @@
         "manifest_version": 2,
         "name": "Instahelper",
         "version": "1.0",
-        "description": "Dummy API of Instagram",
+        "description": "Extension that automates user actions",
         "permissions": [
             "tabs",
             "cookies",
