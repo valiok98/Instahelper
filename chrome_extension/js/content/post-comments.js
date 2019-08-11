@@ -5,34 +5,11 @@ chrome.runtime.onMessage.addListener(async message => {
     if (message.scriptName === 'post-comments') {
 
         const tagNames = [
-            // 'fashion',
-            // 'clothes',
-            // 'clothing',
-            // 'laclothing',
-            // 'fashionnova',
-
-            'art',
-            'artwork',
-            'artistsofinstagram',
-            'laphotography',
-            'photography',
-
-            'losangeles',
-            'newyork',
-            'newjersey',
-            'california',
-            'paloalto'
-
-            // 'photography',
-            // 'vegan',
-            // 'food',
-            // 'love'
-
-            // 'love',
-            // 'people',
-            // 'loganpaul',
-            // 'creative',
-            // 'america'
+            'fashion',
+            'women',
+            'clothing',
+            'womenclothing',
+            'clothes'
         ];
 
         const comments = [

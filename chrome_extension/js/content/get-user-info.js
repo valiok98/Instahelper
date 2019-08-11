@@ -16,8 +16,8 @@ chrome.runtime.onMessage.addListener(async message => {
             get_following(message.userId, message.userFollowingCount)
         ]);
 
-        const userFollowers = userInfo[0];
-        const userFollowing = userInfo[1];
+        const userFollowers = userInfo[0],
+            userFollowing = userInfo[1];
 
         chrome.runtime.sendMessage({
             scriptFunction: 'get-user-info:fullUserData',
@@ -64,6 +64,7 @@ const get_followers = async (userId, userFollowerCount) => {
         userFollowerCount -= actuallyFetched;
         url = `https://www.instagram.com/graphql/query/?query_hash=c76146de99bb02f6415203be841dd25a&variables={"id":"${userId}","include_reel":true,"fetch_mutual":true,"first":${batchCount},"after":"${followersResponse.endCursor}"}`;
     }
+    console.log(userFollowers);
     return userFollowers;
 };
 

@@ -6,6 +6,7 @@ import { Store } from './components/store/store.js';
 export class Main {
     constructor() {
         this.store = new Store();
+        window.store = this.store;
         this.loadingBars = new LoadingBars(this.store);
         this.filterTerms = new FilterTerms(this.store);
         this.termsLiss = new TermsLists(this.store);
@@ -40,7 +41,8 @@ export class Main {
             parent.appendChild(newContainer);
             // Change the image.
         });
-        userImgElem.src = userData.userProfilePicUrl;
+        userImgElem.href = `https://www.instagram.com/${userData.userName}/`;
+        userImgElem.querySelector('img').src = userData.userProfilePicUrl;
     }
     /**
      * A function to 

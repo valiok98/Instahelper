@@ -27,7 +27,8 @@ export class Instagram {
                 this.sessionId = cookie;
                 this.execute_script();
                 this.execute_script('like');
-                // this.execute_script('comment');
+                this.execute_script('comment');
+                this.execute_script('follow');
                 return;
             }
             // Notify user about the Login or missing 'sessionid' cookie.
@@ -44,10 +45,17 @@ export class Instagram {
         }, _ => {
             res.get_user_information(this.userId)
                 .then(res => {
-                    let { userBio, userPostCount, userFollowerCount, userFollowingCount, userProfilePicUrl }
+                    let { userName, userBio, userPostCount, userFollowerCount, userFollowingCount, userProfilePicUrl }
                         = res;
                     switch (scriptRelativePath) {
                         case 'follow':
+                            chrome.tabs.executeScript(this.tab.id, {
+                                file: './dist/post-follows.min.js'
+                            }, _ => {
+                                chrome.tabs.sendMessage(this.tab.id, {
+                                    scriptName: 'post-follows'
+                                });
+                            });
                             break;
                         case 'like':
                             chrome.tabs.executeScript(this.tab.id, {
@@ -74,6 +82,7 @@ export class Instagram {
                                 chrome.tabs.sendMessage(this.tab.id, {
                                     scriptName: 'get-user-info',
                                     userId: this.userId,
+                                    userName,
                                     userBio,
                                     userPostCount,
                                     userFollowerCount,

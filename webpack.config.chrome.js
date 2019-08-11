@@ -10,6 +10,7 @@ module.exports = {
         'get-user-id': './chrome_extension/js/content/get-user-id.js',
         'post-likes': './chrome_extension/js/content/post-likes.js',
         'post-comments': './chrome_extension/js/content/post-comments.js',
+        'post-follows': './chrome_extension/js/content/post-follows.js',
         'index.min.css': './chrome_extension/css/index.scss'
     },
     output: {

@@ -18,12 +18,12 @@ class ManageTabs {
                 // Leave if we already have an Instragram instance.
                 if (res.instagramRegex.test(winTab.url)) {
                     this.instagram.tab = winTab;
-                    // this.instagram.get_session_id();
+                    this.instagram.get_session_id();
                     return;
                 }
             }
             // Open an Instagram instance, if there are no others.
-            // this.instagram.create_tab();
+            this.instagram.create_tab();
         });
         // Handle closing of Instagram tabs.
         chrome.tabs.onRemoved.addListener((tabId, moveInfo) => {

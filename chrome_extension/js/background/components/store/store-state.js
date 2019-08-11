@@ -15,10 +15,7 @@ export const StoreState = {
         tags_value: '',
         locations_value: ''
     },
-    components_terms_lists: {
-        comments_length: 0,
-        tags_length: 0,
-        locations_length: 0,
+    component_terms_lists: {
         comments_list_values: [],
         tags_list_values: [],
         locations_list_values: []

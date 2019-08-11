@@ -1922,7 +1922,7 @@
           justify-content: space-evenly;
   margin: 50px auto; }
 
-.user-information .user-image {
+.user-information .user-image > img {
   width: 150px;
   height: 150px;
   border: 2px solid #b865db;
@@ -2022,7 +2022,11 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: Roboto, sans-serif; }
 
 body {
   background: gainsboro; }
+
+.user-image > img {
+  cursor: pointer; }

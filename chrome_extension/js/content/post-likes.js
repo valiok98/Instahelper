@@ -5,37 +5,11 @@ chrome.runtime.onMessage.addListener(async message => {
     if (message.scriptName === 'post-likes') {
 
         const tagNames = [
-            // 'fashion',
-            // 'lafashion',
-            // 'clothing',
-            // 'clothes',
-            // 'fashionnova'
-
-            'art',
-            'artwork',
-            'artistsofinstagram',
-            'laphotography',
-            'photography',
-
-            'losangeles',
-            'newyork',
-            'newjersey',
-            'california',
-            'paloalto'
-
-            // 'love',
-            // 'instagood',
-            // 'photooftheday',
-            // 'happy',
-            // 'beautiful'
-
-            // 'love',
-            // 'people',
-            // 'loganpaul',
-            // 'creative',
-            // 'america'
-
-
+            'fashion',
+            'women',
+            'clothing',
+            'womenclothing',
+            'clothes'
         ];
 
         // LIKE THE FEED POSTS.
