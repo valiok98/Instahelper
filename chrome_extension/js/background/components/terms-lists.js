@@ -72,10 +72,12 @@ export class TermsLists {
             // We added a comment to the list.
             if (comments.length === commentsList.length + 1) {
                 // Send a message to the Instagram tab with the new comment.
+                
                 chrome.tabs.sendMessage(this.instagram.tab.id, {
                     action: 'add-comment',
                     comment: comments[comments.length - 1]
                 });
+                
                 // Update the store.
                 this.commentsListDOM.querySelector('.mdc-list')
                     .appendChild(this.add_list_item(comments[comments.length - 1], 'COMMENT'));
@@ -88,10 +90,12 @@ export class TermsLists {
             // We added a tag to the list.
             if (tags.length === tagsList.length + 1) {
                 // Send a message to the Instagram tab with the new tag.
+                
                 chrome.tabs.sendMessage(this.instagram.tab.id, {
                     action: 'add-tag',
                     tag: tags[tags.length - 1]
                 });
+                
                 // Update the store.
                 this.tagsListDOM.querySelector('.mdc-list')
                     .appendChild(this.add_list_item(tags[tags.length - 1], 'TAG'));
@@ -104,10 +108,12 @@ export class TermsLists {
             // We added a location to the list.
             if (locations.length === locationsList.length + 1) {
                 // Send a message to the Instagram tab with the new location.
+                
                 chrome.tabs.sendMessage(this.instagram.tab.id, {
                     action: 'add-location',
                     location: locations[locations.length - 1]
                 });
+                
                 // Update the store.
                 this.locationsListDOM.querySelector('.mdc-list')
                     .appendChild(this.add_list_item(locations[locations.length - 1], 'LOCATION'));

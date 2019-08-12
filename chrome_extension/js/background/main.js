@@ -13,7 +13,7 @@ export class Main {
         window.store = this.store;
 
         this.contentTabs = new ContentTabs(this.store, instagram);
-        this.loadingBars = new LoadingBars(this.store, insta);
+        this.loadingBars = new LoadingBars(this.store, instagram);
         this.filterTerms = new FilterTerms(this.store, instagram);
         this.termsLiss = new TermsLists(this.store, instagram);
     }

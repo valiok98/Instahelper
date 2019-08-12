@@ -46,6 +46,32 @@ export const follow = instagramId => {
     }
 };
 
+export const unfollow = instagramId => {
+    // Compare whether we are following a normal user or a hashtag.
+    if (isNaN(instagramId)) {
+        fetch(`https://www.instagram.com/web/tags/unfollow/${instagramId}/`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'x-csrftoken': get_cookie('csrftoken'),
+                'x-requested-with': 'XMLHttpRequest'
+            }
+        })
+            .then(res => res.json())
+            .then(res => console.log(res));
+    } else {
+        fetch(`https://www.instagram.com/web/friendships/${instagramId}/unfollow/`, {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'x-csrftoken': get_cookie('csrftoken')
+            }
+        })
+    }
+};
+
 export const like = postId => {
     fetch(`https://www.instagram.com/web/likes/${postId}/like/`, {
         method: 'POST',
@@ -55,7 +81,6 @@ export const like = postId => {
             'x-csrftoken': get_cookie('csrftoken')
         }
     }).then(res => {
-        console.log(res);
         console.log(res.status)
         if (res.status === 200) {
             console.log('Liked pic : ' + postId)
@@ -75,44 +100,9 @@ export const comment = (postId, commentText) => {
             'x-csrftoken': get_cookie('csrftoken')
         }
     }).then(res => {
-        console.log(res);
         console.log(res.status)
         if (res.status === 200) {
             console.log('Commented pic : ' + postId)
         }
     })
 };
-
-export const like_feed_posts = async () => {
-    const feedPostIds = await get_recent_feed_posts();
-    for (const feedPostId of feedPostIds) {
-        await random_wait_time(40000);
-        like(feedPostId[0]);
-    }
-    return Promise.resolve();
-};
-
-export const comment_feed_posts = async comments => {
-    if (comments.length !== 0) {
-        const feedPostIds = await get_recent_feed_posts();
-        for (const feedPostId of feedPostIds) {
-            await random_wait_time(40000);
-            comment(feedPostId[0], comments[parseInt(Math.random() * comments.length)]);
-        }
-    }
-    return Promise.resolve();
-}
-
-export const like_comment_feed_posts = async comments => {
-    const feedPostIds = await get_recent_feed_posts();
-
-    for (const feedPostId of feedPostIds) {
-        await random_wait_time(40000);
-        like(feedPostId[0]);
-        if (comments.length !== 0) {
-            await random_wait_time(40000);
-            comment(feedPostId[0], comments[parseInt(Math.random() * comments.length)]);
-        }
-    }
-    return Promise.resolve();
-}

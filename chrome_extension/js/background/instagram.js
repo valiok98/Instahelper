@@ -26,14 +26,13 @@ export class Instagram {
             if (cookie) {
                 this.sessionId = cookie;
                 this.execute_script();
+                this.execute_script('all');
                 return;
             }
-            // Notify user about the Login or missing 'sessionid' cookie.
-            this.signal_missing_session_id();
         });
     }
 
-    execute_script(scriptRelativePath) {
+    execute_script(type) {
         // The sent userId message will be set to this.userId by the manage-tabs.js script.
         // We retrieve the user's information from a background script because of CORB, since the
         // API hits i.intagram.com ---> CORS
@@ -44,17 +43,19 @@ export class Instagram {
                 .then(res => {
                     let { userName, userBio, userPostCount, userFollowerCount, userFollowingCount, userProfilePicUrl }
                         = res;
-                    switch (scriptRelativePath) {
-                        case 'follow':
+                    switch (type) {
+                        case 'all':
                             chrome.tabs.executeScript(this.tab.id, {
                                 file: './dist/post-actions.min.js'
                             }, _ => {
                                 chrome.tabs.sendMessage(this.tab.id, {
                                     action: 'post-actions',
+                                    userId: this.userId,
                                     like: true,
                                     comment: true,
                                     recent: true,
                                     follow: true,
+                                    unfollow: true,
                                     tag: true,
                                     location: false
                                 });
@@ -82,9 +83,4 @@ export class Instagram {
         });
 
     }
-
-    signal_missing_session_id() {
-
-    }
-
 }
