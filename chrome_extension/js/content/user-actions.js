@@ -42,7 +42,11 @@ export const follow = instagramId => {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'x-csrftoken': get_cookie('csrftoken')
             }
-        })
+        }).then(res => {
+            if (res.status === 200) {
+                console.log('Liked pic : ' + postId)
+            }
+        });
     }
 };
 

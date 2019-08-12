@@ -42,11 +42,11 @@ chrome.runtime.onMessage.addListener(async message => {
             for (const tag of tags) {
                 const recentPostsIds = await get_recent_posts(tag);
                 for (const recentPostId of recentPostsIds) {
-                    await random_wait_time(40000);
+                    await random_wait_time(20000);
                     like(recentPostId[0]);
-                    await random_wait_time(40000);
+                    await random_wait_time(20000);
                     comment(recentPostId[0], comments[parseInt(Math.random() * comments.length)]);
-                    await random_wait_time(40000);
+                    await random_wait_time(20000);
                     follow(recentPostId[1]);
                     console.log('liking/commenting/following');
                 }
