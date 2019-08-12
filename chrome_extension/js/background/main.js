@@ -5,14 +5,19 @@ import { TermsLists } from './components/terms-lists.js';
 import { Store } from './components/store/store.js';
 
 export class Main {
-    constructor() {
+    constructor(instagram) {
+        this.instagram = instagram;
         this.store = new Store();
+
+        // For debugging purposes only !
         window.store = this.store;
-        this.contentTabs = new ContentTabs(this.store);
-        this.loadingBars = new LoadingBars(this.store);
-        this.filterTerms = new FilterTerms(this.store);
-        this.termsLiss = new TermsLists(this.store);
+
+        this.contentTabs = new ContentTabs(this.store, instagram);
+        this.loadingBars = new LoadingBars(this.store, insta);
+        this.filterTerms = new FilterTerms(this.store, instagram);
+        this.termsLiss = new TermsLists(this.store, instagram);
     }
+
     /**
      * A function to render the user information and replace the loading bars.
      * @param {Object} userData - the object containing amount of followers, following, posts.
@@ -46,11 +51,5 @@ export class Main {
         userImgElem.href = `https://www.instagram.com/${userData.userName}/`;
         userImgElem.querySelector('img').src = userData.userProfilePicUrl;
     }
-    /**
-     * A function to 
-     * @param {Object} userData - the object containing followers, following, posts.
-     */
-    add_user_information_tabs(userData) {
 
-    }
 }

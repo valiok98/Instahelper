@@ -82,3 +82,37 @@ export const comment = (postId, commentText) => {
         }
     })
 };
+
+export const like_feed_posts = async () => {
+    const feedPostIds = await get_recent_feed_posts();
+    for (const feedPostId of feedPostIds) {
+        await random_wait_time(40000);
+        like(feedPostId[0]);
+    }
+    return Promise.resolve();
+};
+
+export const comment_feed_posts = async comments => {
+    if (comments.length !== 0) {
+        const feedPostIds = await get_recent_feed_posts();
+        for (const feedPostId of feedPostIds) {
+            await random_wait_time(40000);
+            comment(feedPostId[0], comments[parseInt(Math.random() * comments.length)]);
+        }
+    }
+    return Promise.resolve();
+}
+
+export const like_comment_feed_posts = async comments => {
+    const feedPostIds = await get_recent_feed_posts();
+
+    for (const feedPostId of feedPostIds) {
+        await random_wait_time(40000);
+        like(feedPostId[0]);
+        if (comments.length !== 0) {
+            await random_wait_time(40000);
+            comment(feedPostId[0], comments[parseInt(Math.random() * comments.length)]);
+        }
+    }
+    return Promise.resolve();
+}

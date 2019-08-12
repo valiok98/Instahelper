@@ -1,4 +1,4 @@
-import { get_cookie } from './post-user-actions';
+import { get_cookie } from './user-actions';
 
 chrome.runtime.sendMessage({
     scriptFunction: 'get-user-id:userId',

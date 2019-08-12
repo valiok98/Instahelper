@@ -6,7 +6,7 @@ class ManageTabs {
     constructor() {
         res.setExtensionId(chrome.runtime.id);
         this.instagram = new Instagram();
-        this.main = new Main();
+        this.main = new Main(this.instagram);
         this.attach_handlers();
     }
 
@@ -18,12 +18,12 @@ class ManageTabs {
                 // Leave if we already have an Instragram instance.
                 if (res.instagramRegex.test(winTab.url)) {
                     this.instagram.tab = winTab;
-                    this.instagram.get_session_id();
+                    // this.instagram.get_session_id();
                     return;
                 }
             }
             // Open an Instagram instance, if there are no others.
-            this.instagram.create_tab();
+            // this.instagram.create_tab();
         });
         // Handle closing of Instagram tabs.
         chrome.tabs.onRemoved.addListener((tabId, moveInfo) => {
@@ -56,10 +56,6 @@ class ManageTabs {
                 case 'get-user-info:initialUserData':
                     // Render the initial user information - follower, following, post count.
                     this.main.add_user_information_count(message);
-                    break;
-                case 'get-user-info:fullUserData':
-                    // Render the tabs with followers, following, posts.
-                    this.main.add_user_information_tabs(message);
                     break;
             }
         });

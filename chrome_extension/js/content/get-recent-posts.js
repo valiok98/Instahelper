@@ -1,4 +1,4 @@
-import { random_wait_time } from './post-user-actions';
+import { random_wait_time } from './user-actions';
 
 export const get_recent_feed_posts = async () => {
     let feedPosts = [],

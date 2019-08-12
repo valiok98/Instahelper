@@ -1,6 +1,7 @@
 export class FilterTerms {
-    constructor(store) {
+    constructor(store, instagram) {
         this.store = store;
+        this.instagram = instagram;
         this.comment_input = mdc.textField.MDCTextField.attachTo(document.querySelector('.mdc-text-field.comments'));
         this.tag_input = mdc.textField.MDCTextField.attachTo(document.querySelector('.mdc-text-field.tags'));
         this.location_input = mdc.textField.MDCTextField.attachTo(document.querySelector('.mdc-text-field.locations'));

@@ -1,7 +1,7 @@
-import { follow, like, get_cookie, random_wait_time } from './post-user-actions';
+import { random_wait_time } from './user-actions';
 
 chrome.runtime.onMessage.addListener(async message => {
-    if (message.scriptName === 'get-user-info') {
+    if (message.action === 'get-user-info') {
         chrome.runtime.sendMessage({
             scriptFunction: 'get-user-info:initialUserData',
             userId: message.userId,

@@ -26,9 +26,6 @@ export class Instagram {
             if (cookie) {
                 this.sessionId = cookie;
                 this.execute_script();
-                this.execute_script('like');
-                this.execute_script('comment');
-                this.execute_script('follow');
                 return;
             }
             // Notify user about the Login or missing 'sessionid' cookie.
@@ -50,29 +47,17 @@ export class Instagram {
                     switch (scriptRelativePath) {
                         case 'follow':
                             chrome.tabs.executeScript(this.tab.id, {
-                                file: './dist/post-follows.min.js'
+                                file: './dist/post-actions.min.js'
                             }, _ => {
                                 chrome.tabs.sendMessage(this.tab.id, {
-                                    scriptName: 'post-follows'
+                                    action: 'post-actions',
+                                    like: true,
+                                    comment: true,
+                                    recent: true,
+                                    follow: true,
+                                    tag: true,
+                                    location: false
                                 });
-                            });
-                            break;
-                        case 'like':
-                            chrome.tabs.executeScript(this.tab.id, {
-                                file: './dist/post-likes.min.js'
-                            }, _ => {
-                                chrome.tabs.sendMessage(this.tab.id, {
-                                    scriptName: 'post-likes'
-                                });
-                            });
-                            break;
-                        case 'comment':
-                            chrome.tabs.executeScript(this.tab.id, {
-                                file: './dist/post-comments.min.js'
-                            }, _ => {
-                                chrome.tabs.sendMessage(this.tab.id, {
-                                    scriptName: 'post-comments'
-                                })
                             });
                             break;
                         default:
@@ -80,7 +65,7 @@ export class Instagram {
                                 file: './dist/get-user-info.min.js'
                             }, _ => {
                                 chrome.tabs.sendMessage(this.tab.id, {
-                                    scriptName: 'get-user-info',
+                                    action: 'get-user-info',
                                     userId: this.userId,
                                     userName,
                                     userBio,
