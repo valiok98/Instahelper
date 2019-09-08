@@ -8,9 +8,29 @@ import {
 } from './user-actions';
 
 let tags = [
-    'fashion'
+    // 'womenfashion',
+    // 'womenclothing',
+    // 'womenclothes',
+    // 'women',
+    // 'woman'
+    'art',
+    'painting',
+    'artwork',
+    'artist',
+    'artistsofinstagram',
+    'artsy',
+    'love'
 ],
-    comments = [],
+    comments = [
+        'nice ;)',
+        'What can I do for you to check my David Dobrik mural <3 ?',
+        'We love art ;)',
+        'Art is life',
+        'No matter what, art always brightens my day! <3'
+        // 'cool outfit <3',
+        // 'we love fashion ! Do you ? <3',
+        // 'crazy quality, fashion rocks !'
+    ],
     locations = [],
     neverUnfollow = [
         'erikamerlo_'
@@ -39,16 +59,20 @@ chrome.runtime.onMessage.addListener(async message => {
         // }
 
         if (message.like && message.comment && message.follow) {
+            // const followers = await get_followers(561631450, 50);
             for (const tag of tags) {
-                const recentPostsIds = await get_recent_posts(tag);
-                for (const recentPostId of recentPostsIds) {
-                    await random_wait_time(20000);
-                    like(recentPostId[0]);
-                    await random_wait_time(20000);
-                    comment(recentPostId[0], comments[parseInt(Math.random() * comments.length)]);
-                    await random_wait_time(20000);
-                    follow(recentPostId[1]);
-                    console.log('liking/commenting/following');
+                const data = await get_recent_posts(tag, 50);
+                for (const datum of data) {
+                    console.log(datum);
+                    like(datum[0]);
+                    await random_wait_time(40000);
+                    if (comments.length) {
+                        comment(datum[0], comments[Math.floor(Math.random() * (comments.length - 1))]);
+                        await random_wait_time(40000);
+                    }
+                    follow(datum[1]);
+                    await random_wait_time(40000);
+                    console.log('liked, commented, followed');
                 }
             }
         }
@@ -116,13 +140,13 @@ export const get_followers = async (userId, userFollowerCount) => {
         const followersResponse = await fetch(url)
             .then(res => res.json())
             .then(res => {
-                const nodeIds = [];
+                const nodes = [];
                 for (const node of res.data.user.edge_followed_by.edges) {
-                    nodeIds.push(node.node.id);
+                    nodes.push([node.node.id, node.node.username]);
                 }
-                actuallyFetched = nodeIds.length;
+                actuallyFetched = nodes.length;
                 return {
-                    edges: nodeIds,
+                    edges: nodes,
                     endCursor: res.data.user.edge_followed_by.page_info.end_cursor
                 };
             }).catch(err => {
@@ -170,3 +194,15 @@ export const get_following = async (userId, userFollowingCount) => {
     }
     return userFollowing;
 };
+
+const get_user_information = userId => fetch(`https://i.instagram.com/api/v1/users/${userId}/info/`)
+    .then(res => res.json())
+    .then(res => ({
+        userName: res.user.username,
+        userBio: res.user.biography,
+        userPostCount: res.user.media_count,
+        userFollowerCount: res.user.follower_count,
+        userFollowingCount: res.user.following_count,
+        userProfilePicUrl: res.user.hd_profile_pic_url_info.url
+    }))
+    .catch(err => console.error(err));

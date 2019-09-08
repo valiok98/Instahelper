@@ -43,10 +43,8 @@ export const follow = instagramId => {
                 'x-csrftoken': get_cookie('csrftoken')
             }
         }).then(res => {
-            if (res.status === 200) {
-                console.log('Liked pic : ' + postId)
-            }
-        });
+            console.log(res.status)
+        }).catch(err => { });
     }
 };
 
@@ -72,7 +70,9 @@ export const unfollow = instagramId => {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'x-csrftoken': get_cookie('csrftoken')
             }
-        })
+        }).then(res => {
+            console.log(res.status)
+        }).catch(err => { });
     }
 };
 
@@ -86,10 +86,7 @@ export const like = postId => {
         }
     }).then(res => {
         console.log(res.status)
-        if (res.status === 200) {
-            console.log('Liked pic : ' + postId)
-        }
-    })
+    }).catch(err => { });
 };
 
 export const comment = (postId, commentText) => {
@@ -105,8 +102,5 @@ export const comment = (postId, commentText) => {
         }
     }).then(res => {
         console.log(res.status)
-        if (res.status === 200) {
-            console.log('Commented pic : ' + postId)
-        }
-    })
+    }).catch(err => { });
 };
